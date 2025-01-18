@@ -1,0 +1,60 @@
+@use "../../../styles/module-imports" as *;
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 20px 30px;
+
+  @include media(tablets) {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-20%, 0px);
+    margin-top: -35px;
+  }
+
+  @include media(laptops) {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-120%, 20px);
+    margin-top: -15px;
+  }
+
+  @include media(big-screens) {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-140%, 20px);
+  }
+
+  @include media(large-desktops) {
+    width: 300px;
+    position: absolute;
+    transform: translate(-105%, 20px);
+  }
+}
+
+.searchInput {
+  border: 1px solid $gray;
+  background-color: transparent;
+  border-radius: 20px;
+  color: white;
+  padding: 3px;
+  height: 20px;
+  width: 300px;
+}
+
+.searchIcon {
+  width: 20px;
+  position: relative;
+  //  background-color: red;
+  padding: 0px 5px;
+  right: 30px; // Adjust the right position for the icon
+  top: 0; // Align the icon vertically to the center
+  //  transform: translateY(-50%); // Adjust to perfectly center it vertically
+  font-size: 18px; // Adjust the icon size
+  color: $gray; // Icon color
+  pointer-events: none; // Ensures the icon doesn't interfere with the input's focus
+}

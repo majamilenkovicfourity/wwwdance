@@ -1,0 +1,155 @@
+@use "@styles/module-imports" as *;
+
+.navBar {
+  color: $white;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  // background-color: $black;
+
+  @include media(laptops) {
+    background-color: $black;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+    flex-direction: row;
+  }
+
+  @include media(large-desktops) {
+    background-color: $black;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 16px;
+    flex-direction: row;
+  }
+}
+
+.logoImages {
+  @include media(smartphone) {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+}
+
+.mainLogoWidth {
+  @include media(smartphone) {
+    width: 200px;
+  }
+  @include media(laptops) {
+    margin-left: 10px;
+    width: 200px;
+  }
+  @include media(large-desktops) {
+    margin-left: 10px;
+    width: 300px;
+  }
+}
+
+.hamburger {
+  width: 20px;
+
+  @include media(laptops) {
+    display: none;
+  }
+}
+
+.navItem {
+  display: grid;
+  float: right;
+  margin: 0px 7px;
+  width: 100%;
+
+  border-radius
+  // display: grid;
+  // margin: 0px 10px;
+
+  :hover {
+    background-color: $pink;
+    transition: transform 0.3s ease;
+    border: none;
+  }
+
+  @include media(tablets) {
+    margin: 10px 7px;
+    // width: 50%;
+  }
+
+  @include media(laptops) {
+    display: flex;
+    gap: 2px;
+    height: auto;
+    width: auto;
+
+    // :hover {
+    //     background-color: transparent;
+    //     transition: transform 0.3s ease;
+    //     border: none;
+    //   }
+  }
+
+  @include media(large-desktops) {
+    gap: 5px;
+    margin-right: 20px;
+    font-size: 18px;
+  }
+}
+
+.linkItem {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: inline-block;
+  background-color: black;
+
+  // version with border-radius
+  // margin: 4px 2px;
+  // background-color: transparent;
+  // border: 1px solid gray;
+  // border-radius: 20px;
+
+  @include media(laptops) {
+    border-radius: none;
+    border: none;
+  }
+
+  padding: 10px 10px;
+  text-align: center;
+
+  .text {
+    position: relative; // Ensure pseudo-elements are relative to this text
+    z-index: 1;
+
+    &::after {
+      content: ""; // Pseudo-element for the pink rectangle
+      position: absolute;
+      left: -10px;
+      border-radius: 10px;
+      padding: 0px 10px;
+      bottom: 0; // Align at the bottom
+      width: 100%; // Half the width of the text container
+      height: 40%; // Half the height of the text container
+      background-color: $pink; // The desired pink color
+      transform: scaleY(0); // Initially hidden
+      transform-origin: bottom; // Expand from the bottom
+      transition: transform 0.3s ease; // Smooth animation
+      z-index: -1; // Ensure it’s behind the text
+    }
+
+    &:hover::after {
+      transform: scaleY(1); // Reveal the pink rectangle on hover
+    }
+  }
+
+  &.active .text::after {
+    transform: scaleY(1); // Keep the rectangle visible when the link is active
+  }
+}
