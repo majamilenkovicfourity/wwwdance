@@ -1,0 +1,26 @@
+@use "@styles/module-imports" as *;
+
+.upcomingEvent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  @include media(tablets) {
+    font-size: 24px;
+  }
+}
+.arrowHolder {
+  display: flex;
+  flex-direction: row;
+  width: 10px;
+  height: 20px;
+
+  @include media(tablets) {
+    width: 30px;
+    height: 30px;
+  }
+}

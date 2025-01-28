@@ -1,0 +1,49 @@
+@use "@styles/module-imports" as *;
+.monthHolder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+
+.monthTitle {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+.noEvents {
+  font-size: 18px;
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 10px;
+  font-style: italic;
+}
+.events {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  gap: 10px;
+
+  @include media(tablets) {
+    flex-flow: row;
+  }
+}
+
+.eventImg {
+  display: flex;
+  justify-content: center;
+
+  height: 100%;
+  width: auto;
+
+  @include media(tablets) {
+    height: 250px;
+    width: auto;
+  }
+  @include media(laptops) {
+    height: 350px;
+    width: auto;
+  }
+}

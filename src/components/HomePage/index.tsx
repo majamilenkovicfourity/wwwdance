@@ -9,6 +9,10 @@ import HipHop from "../../assets/HipHop.png";
 import JazzDance from "../../assets/JazzDance.png";
 import { TextImageHolder } from "../shared/ImageWithTextHolder";
 import { quote } from "../../const/global";
+import ArrowTitleHolder from "../shared/ArrowTitleHolder";
+import EventByMonth from "../Competitions/components/EventByMonth";
+import SpringFest from "../../assets/UpcomingEventsAssets/SpringFestival17.5.2025.png";
+import DanceFest from "../../assets/UpcomingEventsAssets/13.plesni-festival.png";
 
 export const HomePage: React.FC = () => {
   return (
@@ -17,15 +21,8 @@ export const HomePage: React.FC = () => {
         <img src={MainPhoto} alt="main-photo" />
       </div>
       {/* Upcoming event */}
-      <div className={styles.upcomingEvent}>
-        <div className={styles.arrowHolder}>
-          <img src={ArrowRight} alt="arrow" />
-          <img src={ArrowRight} alt="arrow" />
-        </div>
-        <span>
-          <h1> UPCOMING EVENT </h1>
-        </span>
-      </div>
+      <ArrowTitleHolder title="Upcoming event" />
+      <EventByMonth events={[DanceFest, SpringFest]} />
       {/*  info */}
       <TextImageHolder
         src={OrangeDance}

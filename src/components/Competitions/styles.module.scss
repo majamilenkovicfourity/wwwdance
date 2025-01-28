@@ -1,0 +1,8 @@
+@use "@styles/module-imports" as *;
+
+.competitionsHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
