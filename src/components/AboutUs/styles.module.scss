@@ -1,0 +1,94 @@
+@import "@styles/module-imports";
+
+.backgroundImage {
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include media(laptops) {
+    background-image: url("../../assets/aboutus-wallpaper.png");
+    background-position: 0% 93%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+  }
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 50px;
+
+  @include media(laptops) {
+    margin-top: 100px;
+    gap: 10px;
+  }
+}
+
+.arrowHolder {
+  display: flex;
+  flex-direction: row;
+}
+
+.pageTitleText {
+  letter-spacing: 5px;
+  word-break: keep-all;
+  flex-wrap: wrap;
+  font-size: 20px;
+  text-align: center;
+  margin: 0px 10px;
+
+  @include media(laptops) {
+    font-size: 24px;
+  }
+}
+
+.textHolder {
+  margin: 20px 0px;
+  background-color: $purple;
+
+  @include media(laptops) {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+}
+
+.pinkText {
+  color: $pink;
+}
+.subTitle {
+  color: $pink-secondary;
+  text-align: center;
+  word-break: keep-all;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 20px 40px;
+
+  @include media(laptops) {
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.textWrapper {
+  margin: 40px 0px;
+}
+
+.text {
+  text-align: center;
+  font-size: 16px;
+  margin: 20px 40px;
+  @include media(laptops) {
+    font-size: 20px;
+  }
+}

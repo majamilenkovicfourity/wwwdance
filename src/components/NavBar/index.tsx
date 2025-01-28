@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WWWDanceLogo from "../../assets/LogoWWW.svg";
 import { NavLink } from "react-router-dom";
 import { SearchInput } from "../shared/SearchInput";
-import { navItems } from "../../const/global";
+import { breakpoints, navItems } from "../../const/global";
 import Hamburger from "../../assets/fi_menu.svg";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 import styles from "./styles.module.scss";
@@ -22,7 +22,7 @@ export const NavBar: React.FC = () => {
         </div>
       </div>
       <SearchInput />
-      {(screenWidth >= 961 || isOpen) && (
+      {(screenWidth >= Number(breakpoints.laptops) || isOpen) && (
         <div className={styles.navItem}>
           <NavLink
             to="/"

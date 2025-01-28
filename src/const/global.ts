@@ -1,3 +1,12 @@
+export const breakpoints = {
+  smartphone: 320,
+  eReaders: 480,
+  tablets: 640,
+  laptops: 960,
+  bigScreens: 1024,
+  largeDesktops: 1280,
+};
+
 export const navItems = {
   Home: "HOME",
   AboutUs: "ABOUT US",

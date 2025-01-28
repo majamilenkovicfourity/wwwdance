@@ -1,0 +1,58 @@
+@use "@styles/module-imports" as *;
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContainer {
+  @extend .flex;
+  flex-direction: column;
+  flex: 1;
+}
+.mainPhoto {
+  margin: 50px 0px;
+}
+
+.upcomingEvent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.arrowHolder {
+  display: flex;
+  flex-direction: row;
+}
+.quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $pink;
+  padding: 40px 0px;
+  font-style: italic;
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 10px;
+
+  font-weight: 700;
+  .writer {
+    color: white;
+    font-weight: 100;
+  }
+}
+
+.slideHolder {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.imageHolder {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 40px;
+}

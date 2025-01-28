@@ -13,7 +13,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     font-size: 14px;
     flex-direction: row;
   }
@@ -24,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     font-size: 16px;
     flex-direction: row;
   }
@@ -41,9 +39,8 @@
 }
 
 .mainLogoWidth {
-  @include media(smartphone) {
-    width: 200px;
-  }
+  width: 200px;
+
   @include media(laptops) {
     margin-left: 10px;
     width: 200px;
@@ -56,6 +53,7 @@
 
 .hamburger {
   width: 20px;
+  cursor: pointer;
 
   @include media(laptops) {
     display: none;
@@ -64,7 +62,7 @@
 
 .navItem {
   display: grid;
-  float: right;
+  // float: right;
   margin: 0px 7px;
   width: 100%;
 
@@ -110,19 +108,19 @@
   display: inline-block;
   background-color: black;
 
+  padding: 10px 10px;
+  text-align: center;
+
   // version with border-radius
   // margin: 4px 2px;
   // background-color: transparent;
   // border: 1px solid gray;
   // border-radius: 20px;
 
-  @include media(laptops) {
-    border-radius: none;
-    border: none;
-  }
-
-  padding: 10px 10px;
-  text-align: center;
+  // @include media(laptops) {
+  //   border-radius: none;
+  //   border: none;
+  // }
 
   .text {
     position: relative; // Ensure pseudo-elements are relative to this text

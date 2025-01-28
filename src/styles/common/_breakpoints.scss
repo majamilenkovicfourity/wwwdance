@@ -6,36 +6,8 @@ $breakpoints: (
   big-screens: 1024px,
   large-desktops: 1280px,
 );
+
 @mixin media($breakpoint) {
-  //   @if $breakpoint == phone {
-  //     @media (max-width: #{$tablet-breakpoint - 1}) {
-  //       @content;
-  //     }
-  //   }
-
-  //   @if $breakpoint == tablet {
-  //     @media (min-width: #{$tablet-breakpoint}) {
-  //       @content;
-  //     }
-  //   }
-
-  //   @if $breakpoint == laptop {
-  //     @media (min-width: #{$laptop-breakpoint}) {
-  //       @content;
-  //     }
-  //   }
-
-  //   @if $breakpoint == desktop {
-  //     @media (min-width: #{$desktop-breakpoint}) {
-  //       @content;
-  //     }
-  //   }
-
-  //   @if $breakpoint == max-screen {
-  //     @media (min-width: #{$max-breakpoint}) {
-  //       @content;
-  //     }
-  //   }
   @if map-has-key($breakpoints, $breakpoint) {
     @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
