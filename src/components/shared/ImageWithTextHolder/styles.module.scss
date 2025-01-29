@@ -1,14 +1,20 @@
 .imageHolder {
   // position: absolute;
+  min-width: 100%;
+  flex-shrink: 0;
+  text-align: center;
 
   &.img {
     // display: block;
+    // width: 100%;
+    // height: auto;
     width: 100%;
     height: auto;
+    border-radius: 8px;
   }
 
   .infoTextUp {
-    // position: absolute;
+    position: absolute;
     letter-spacing: 15px;
     top: 10px;
     left: 50px;
@@ -16,10 +22,10 @@
     font-size: 30px;
   }
   .infoTextCenter {
-    // position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    transform: translate(0%, -100%);
     color: white;
     width: 100%;
     letter-spacing: 15px;
@@ -29,6 +35,6 @@
   }
 }
 
-.margin {
-  margin: 40px;
-}
+// .margin {
+//   margin: 40px;
+// }

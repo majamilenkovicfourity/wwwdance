@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./styles/app.scss";
+import "./index.css";
 
 import HomePage from "./components/HomePage";
 
@@ -12,14 +13,16 @@ import Competitions from "./components/Competitions";
 function App() {
   return (
     <Router basename="/wwwdance">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/competitions" element={<Competitions />} />
-      </Routes>
-      <Footer />
+      <div className="parent">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/competitions" element={<Competitions />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }

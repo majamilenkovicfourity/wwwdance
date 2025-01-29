@@ -1,23 +1,19 @@
 @use "../../styles/module-imports" as *;
 
-footer {
-  // position: absolute;
+.footer {
+  margin-bottom: 0;
+  // // position: ab;
   bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
-  font-size: 14px;
-}
-
-.footerWrapper {
-  background-color: $pink;
   display: flex;
-  padding: 15px 0;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+  text-align: center;
+  background-color: $pink;
   height: 100px;
+  gap: 10px;
+  // position: fixed;
 }
 
 .navLinks {
@@ -48,13 +44,15 @@ footer {
     text-decoration: none;
   }
 }
-.textWrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
+// .textWrapper {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: center;
+// }
 .emailImage {
+  width: 20px;
+  margin: auto;
   @include media(tablets) {
     display: none;
   }
@@ -74,4 +72,8 @@ footer {
     text-align: center;
     padding: 10px;
   }
+}
+
+.textDecoration {
+  text-decoration: none;
 }

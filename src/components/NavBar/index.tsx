@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import WWWDanceLogo from "../../assets/LogoWWW.svg";
 import { NavLink } from "react-router-dom";
-import { SearchInput } from "../shared/SearchInput";
 import { breakpoints, navItems } from "../../const/global";
 import Hamburger from "../../assets/fi_menu.svg";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
@@ -17,13 +16,16 @@ export const NavBar: React.FC = () => {
         <div className={styles.mainLogoWidth}>
           <img src={WWWDanceLogo} alt="logo" />
         </div>
-        <div className={styles.hamburger} onClick={() => setIsOpen(!isOpen)}>
-          <img src={Hamburger} alt="meni" />
-        </div>
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <div className={styles.hamburger}>
+            <img src={Hamburger} alt="meni" />
+          </div>
+        </button>
       </div>
-      <SearchInput />
+      {/* <SearchInput /> */}
       {(screenWidth >= Number(breakpoints.laptops) || isOpen) && (
         <div className={styles.navItem}>
+          {/* <div className={styles.hamburgMenuOpen}> */}
           <NavLink
             to="/"
             relative={"path"}
@@ -75,6 +77,7 @@ export const NavBar: React.FC = () => {
             <span className={styles.text}>{navItems.Contact}</span>
           </NavLink>
         </div>
+        // </div>
       )}
     </div>
   );

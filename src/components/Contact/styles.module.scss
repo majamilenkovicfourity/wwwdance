@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  flex: 1;
   @include media(laptops) {
     padding: 100px 0px;
   }
@@ -50,14 +51,16 @@
   font-size: 16px;
 
   @include media(tablets) {
-    max-width: 400px;
+    max-width: 300px;
     margin: 50px 0px;
   }
 }
 
 .phone {
   @extend .shared;
-  border-radius: 70px 0px 0px 0px;
+  @include media(tablets) {
+    border-radius: 70px 0px 0px 0px;
+  }
 }
 
 .phoneInfo {
@@ -66,15 +69,12 @@
 
 .email {
   @extend .shared;
-
-  border-radius: 0px 0px 70px 0px;
-
   p {
     margin-bottom: 30px;
+  }
 
-    @include media(tablets) {
-      border-radius: 0px 70px 0px 0px;
-    }
+  @include media(tablets) {
+    border-radius: 0px 70px 0px 0px;
   }
 }
 

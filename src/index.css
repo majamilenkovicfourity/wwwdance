@@ -1,15 +1,22 @@
-/* :root {
+:root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;    
-  ;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+body {
+  margin: 0 auto;
+ display: flex; 
+  //place-items: center;
+   position: relative; 
+  min-height: 100vh;
 } */
 
-/* body {
-  margin: 0;
+.parent {
+  height: 100%;
   display: flex;
-  place-items: center;  
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
- */

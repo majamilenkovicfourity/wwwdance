@@ -19,17 +19,15 @@ export const TextImageHolder: React.FC<TextImageHolderProsp> = ({
   margin,
 }) => {
   return (
-    <>
-      <div className={cx(margin && styles.margin, styles.imageHolder)}>
-        <img src={src} alt={alt} />
-        <div
-          className={
-            position === "up" ? styles.infoTextUp : styles.infoTextCenter
-          }
-        >
-          {uppercase ? label.toUpperCase() : label}
-        </div>
-      </div>
-    </>
+    <div className={cx(margin && styles.margin, styles.imageHolder)}>
+      <img src={src} alt={alt} />
+      {/* <div
+        className={
+          position === "up" ? styles.infoTextUp : styles.infoTextCenter
+        }
+      >
+        {uppercase ? label.toUpperCase() : label}
+      </div> */}
+    </div>
   );
 };
