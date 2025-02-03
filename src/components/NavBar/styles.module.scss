@@ -1,46 +1,34 @@
 @use "@styles/module-imports" as *;
 
 .navBar {
-  color: $white;
-  display: flex;
+  position: sticky;
   flex-direction: column;
-  justify-content: space-between;
+  display: flex;
+  top: 0;
   align-items: center;
   font-size: 14px;
-  width: 100%;
+  background-color: $black;
+  height: 70px;
+  z-index: 10;
+  color: $white;
 
   @include media(laptops) {
-    background-color: $black;
-    height: 70px;
     flex-direction: row;
   }
-
-  @include media(large-desktops) {
-    background-color: $black;
-    height: 80px;
-    font-size: 16px;
-  }
 }
-
-.logoImages {
+.navItemHolder {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
   width: 100%;
+  justify-content: space-between;
+  margin: 10px 0px;
 }
 
 .mainLogoWidth {
   width: 200px;
-  padding: 5px 10px;
-  @include media(laptops) {
-    margin-left: 10px;
-    width: 200px;
-  }
-  @include media(large-desktops) {
-    margin-left: 10px;
-    width: 300px;
-  }
+  margin-left: 10px;
 }
+
 button {
   background-color: transparent;
   border: none;
@@ -49,20 +37,50 @@ button {
 .hamburger {
   width: 20px;
   cursor: pointer;
-  padding: 5px 10px;
+  margin-right: 10px;
+
   @include media(laptops) {
     display: none;
   }
 }
 
+.overlayMenuOpen {
+  width: 100%;
+  @include media(laptops) {
+    margin-right: 20px;
+  }
+}
+.overlayMenu {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: none;
+  overflow: hidden;
+  overflow-y: hidden;
+
+  &.active {
+    display: block;
+  }
+
+  @include media(laptops) {
+    backdrop-filter: none;
+    background: transparent;
+    display: block;
+  }
+}
+
 .navItem {
   display: grid;
-  margin: 0px 7px;
-
   width: 100%;
 
   border-radius :hover {
     background-color: $pink;
+    margin: 0px 7px;
     transition: transform 0.3s ease;
     border: none;
   }

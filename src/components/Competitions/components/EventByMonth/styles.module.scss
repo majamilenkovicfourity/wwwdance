@@ -20,30 +20,73 @@
   border-radius: 10px;
   font-style: italic;
 }
+
 .events {
   display: flex;
   justify-content: center;
   flex-flow: column;
+  flex-wrap: wrap;
   gap: 10px;
 
   @include media(tablets) {
     flex-flow: row;
+    flex-wrap: wrap;
   }
 }
 
 .eventImg {
+  position: relative;
   display: flex;
   justify-content: center;
-
-  height: 100%;
-  width: auto;
+  align-items: center;
+  // height: 250px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  @include media(e-readers) {
+    width: 350px;
+    height: auto;
+  }
 
   @include media(tablets) {
     height: 250px;
     width: auto;
   }
+
   @include media(laptops) {
-    height: 350px;
+    height: 300px;
     width: auto;
   }
+}
+
+.eventImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.overlay {
+  cursor: pointer;
+  position: absolute; /* Position the overlay on top of the image */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start with overlay hidden */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.eventImg:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.readMore {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
 }

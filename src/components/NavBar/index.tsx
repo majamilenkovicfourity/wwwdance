@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import WWWDanceLogo from "../../assets/LogoWWW.svg";
-import { NavLink } from "react-router-dom";
-import { breakpoints, navItems } from "../../const/global";
 import Hamburger from "../../assets/fi_menu.svg";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 import styles from "./styles.module.scss";
+import clsx from "clsx";
+import { NavLink } from "react-router-dom";
+import { breakpoints, navItems } from "../../const/global";
 
 export const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,20 +13,29 @@ export const NavBar: React.FC = () => {
 
   return (
     <div className={styles.navBar}>
-      <div className={styles.logoImages}>
+      <div className={styles.navItemHolder}>
         <div className={styles.mainLogoWidth}>
           <img src={WWWDanceLogo} alt="logo" />
         </div>
-        <button onClick={() => setIsOpen(!isOpen)}>
-          <div className={styles.hamburger}>
-            <img src={Hamburger} alt="meni" />
-          </div>
-        </button>
+        {screenWidth <= 960 && (
+          <button onClick={() => setIsOpen(!isOpen)}>
+            <div className={styles.hamburger}>
+              <img src={Hamburger} alt="meni" />
+            </div>
+          </button>
+        )}
       </div>
-      {/* <SearchInput /> */}
-      {(screenWidth >= Number(breakpoints.laptops) || isOpen) && (
+
+      <div
+        className={
+          screenWidth >= Number(breakpoints.laptops)
+            ? styles.overlayMenuOpen
+            : clsx(styles.overlayMenu, {
+                [styles.active]: isOpen,
+              })
+        }
+      >
         <div className={styles.navItem}>
-          {/* <div className={styles.hamburgMenuOpen}> */}
           <NavLink
             to="/"
             relative={"path"}
@@ -77,8 +87,7 @@ export const NavBar: React.FC = () => {
             <span className={styles.text}>{navItems.Contact}</span>
           </NavLink>
         </div>
-        // </div>
-      )}
+      </div>
     </div>
   );
 };

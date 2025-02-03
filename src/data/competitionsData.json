@@ -1,0 +1,40 @@
+{
+  "competitions": [
+    {
+      "id": "1",
+      "name": "IDEA Dance Fest",
+      "city": "Obrenovac",
+      "address": " / ",
+      "date": "09. MART 2025",
+      "imgSrc": "wwwdance/assets/UpcomingEventsAssets/09032025IdeaDanceFest.jpg",
+      "about": "www.baletidea.co.rs"
+    },
+    {
+      "id": "2",
+      "name": "Dance Zone",
+      "city": "Lazarevac",
+      "address": "Sportski Centar `Kolubara`",
+      "date": "15-16. MART 2025",
+      "imgSrc": "wwwdance/assets/UpcomingEventsAssets/15032025PrizePool.jpg",
+      "about": "4000eur + more prizes"
+    },
+    {
+      "id": "3",
+      "name": "13. Plesni festival Spring Fest",
+      "city": "Novi Sad",
+      "address": "Spens",
+      "date": "12. MAJ 2025",
+      "imgSrc": "wwwdance/assets/UpcomingEventsAssets/12052025SpringFest.png",
+      "about": "Novcane nagrade"
+    },
+    {
+      "id": "4",
+      "name": "4. Plesni festival 'Spring Fest' ",
+      "city": "Vrbas",
+      "address": "Sportski centar 'Drago Jovovic'",
+      "date": "17. MAJ 2025",
+      "imgSrc": "wwwdance/assets/UpcomingEventsAssets/17052025SpringFestival.png",
+      "about": "Novcane nagrade dobijaju prva tri mesta. Dobar provod, dobra zabava. Prijavi se i ti i osvoji!"
+    }
+  ]
+}

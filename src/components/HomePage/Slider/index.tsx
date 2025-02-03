@@ -1,10 +1,10 @@
 import { FC, useEffect, useRef, useState } from "react";
 import cx from "clsx";
-import ArrowRight from "../../../assets/ArrowRight.png";
-import ArrowLeft from "../../../assets/ArrowLeft.png";
-import Ballet from "../../../assets/Ballet.png";
-import JazzDance from "../../../assets/JazzDance.png";
-import HipHop from "../../../assets/HipHop.png";
+import ArrowRight from "assets/ArrowRight.png";
+import ArrowLeft from "assets/ArrowLeft.png";
+import Ballet from "assets/Ballet.png";
+import JazzDance from "assets/JazzDance.png";
+import HipHop from "assets/HipHop.png";
 
 // import { TextImageHolder } from "../../shared/ImageWithTextHolder";
 import styles from "./styles.module.scss";
