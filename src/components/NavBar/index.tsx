@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useScreenWidth } from "../../hooks/useScreenWidth";
 import styles from "./styles.module.scss";
 import clsx from "clsx";
 import { NavLink, useNavigate } from "react-router-dom";
 import { breakpoints, navItems } from "../../const/global";
+import { useScreenWidth } from "../../hooks/useScreenWidth";
 
 export const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

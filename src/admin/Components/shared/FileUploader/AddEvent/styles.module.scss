@@ -1,0 +1,17 @@
+@use "@styles/module-imports" as *;
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  button {
+    background-color: $pink-secondary;
+    width: 200px;
+    height: 30px;
+    color: $white;
+  }
+  button:hover {
+    background-color: $purple;
+  }
+}

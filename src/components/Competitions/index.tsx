@@ -10,8 +10,10 @@ const Competitions: React.FC = () => {
     return useMemo(
       () =>
         competitions
-          .filter((event) =>
-            event.date.toUpperCase().includes(month.toUpperCase())
+          .filter(
+            (event) =>
+              typeof event.date === "object" &&
+              event.date.month.toUpperCase().includes(month.toUpperCase())
           )
           .map((event) => event.imgSrc),
       [month] // Recomputes only when month changes
@@ -24,6 +26,8 @@ const Competitions: React.FC = () => {
       <EventByMonth month="March" events={useMonthImages("MARCH")} />
       <EventByMonth month="April" events={useMonthImages("APRIL")} />
       <EventByMonth month="May" events={useMonthImages("MAY")} />
+      <EventByMonth month="June" events={useMonthImages("JUNE")} />
+      <EventByMonth month="July" events={useMonthImages("JULY")} />
     </div>
   );
 };

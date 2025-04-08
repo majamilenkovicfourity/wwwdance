@@ -1,0 +1,53 @@
+.imageUploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .dropArea {
+    width: 250px;
+    height: 150px;
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: #007bff;
+    }
+
+    &.hasImage {
+      border: none;
+    }
+
+    .preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  .uploadBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+}

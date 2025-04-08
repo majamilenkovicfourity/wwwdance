@@ -4,15 +4,19 @@ import "./index.css";
 
 import AdminApp from "./admin/AdminApp";
 import ClientApp from "./Client";
+import React from "react";
 
 function App() {
   return (
-    <Router basename="/wwwdance">
-      <Routes>
-        <Route path="/admin/*" element={<AdminApp />} />
-        <Route path="/*" element={<ClientApp />} />
-      </Routes>
-    </Router>
+    <>
+      <link rel="icon" type="image/png" href="/favicon.png" />
+      <Router basename="/wwwdance">
+        <Routes>
+          <Route path="/admin/*" element={<AdminApp />} />
+          <Route path="/*" element={<ClientApp />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

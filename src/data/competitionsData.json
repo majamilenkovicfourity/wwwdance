@@ -5,8 +5,13 @@
       "name": "DANCE NOW - Sirmium",
       "city": "Sremska Mitrovica",
       "address": "PSC 'Pinki'",
-      "date": "08. MARCH 2025",
+      "date": {
+        "days": "8.",
+        "month": "March",
+        "year": 2025
+      },
       "imgSrc": "/wwwdance/assets/UpcomingEventsAssets/2025/March/05032025DanceSirmium.jpg",
+      "pdfUploaded": false,
       "about": "/"
     },
     {
@@ -14,8 +19,13 @@
       "name": "IDEA Dance Fest",
       "city": "Obrenovac",
       "address": " / ",
-      "date": "09. MARCH 2025",
+      "date": {
+        "days": "9.",
+        "month": "March",
+        "year": 2025
+      },
       "imgSrc": "/wwwdance/assets/UpcomingEventsAssets/2025/March/09032025IdeaDanceFest.jpg",
+      "pdfUploaded": false,
       "about": "www.baletidea.co.rs"
     },
     {
@@ -23,8 +33,13 @@
       "name": "Dance Zone",
       "city": "Lazarevac",
       "address": "Sportski Centar `Kolubara`",
-      "date": "15-16. MARCH 2025",
+      "date": {
+        "days": "15-16.",
+        "month": "March",
+        "year": 2025
+      },
       "imgSrc": "/wwwdance/assets/UpcomingEventsAssets/2025/March/15032025PrizePool.jpg",
+      "pdfUploaded": false,
       "about": "4000eur + more prizes"
     },
     {
@@ -32,8 +47,13 @@
       "name": "13. Plesni festival Spring Fest",
       "city": "Novi Sad",
       "address": "Spens",
-      "date": "12. APRIL 2025",
+      "date": {
+        "days": "12.",
+        "month": "April",
+        "year": 2025
+      },
       "imgSrc": "/wwwdance/assets/UpcomingEventsAssets/2025/April/12042025SpringFest.png",
+      "pdfUploaded": false,
       "about": "Novcane nagrade"
     },
     {
@@ -41,9 +61,56 @@
       "name": "4. Plesni festival 'Spring Fest' ",
       "city": "Vrbas",
       "address": "Sportski centar 'Drago Jovovic'",
-      "date": "17. MAY 2025",
+      "date": {
+        "days": "17.",
+        "month": "May",
+        "year": 2025
+      },
       "imgSrc": "/wwwdance/assets/UpcomingEventsAssets/2025/May/17052025SpringFestival.png",
+      "pdfUploaded": true,
       "about": "Novcane nagrade dobijaju prva tri mesta. Dobar provod, dobra zabava. Prijavi se i ti i osvoji!"
+    },
+    {
+      "id": "-64PgyLyDvy1ArowgPGT3",
+      "name": "somename",
+      "city": "new york\n",
+      "address": "test adres",
+      "date": {
+        "days": "20-21",
+        "month": "December",
+        "year": 2025
+      },
+      "imgSrc": "/assets/UpcomingEventsAssets/2025/December/-64PgyLyDvy1ArowgPGT3-1743450052147.png",
+      "pdfUploaded": false,
+      "about": "some test about file"
+    },
+    {
+      "id": "BEz-o_WKY1TaXu_5fxRGG",
+      "name": "somename",
+      "city": "new york\n",
+      "address": "test adres",
+      "date": {
+        "days": "20-21",
+        "month": "December",
+        "year": 2025
+      },
+      "imgSrc": "/assets/UpcomingEventsAssets/2025/December/BEz-o_WKY1TaXu_5fxRGG-1743579766956.png",
+      "pdfUploaded": false,
+      "about": "some test about file"
+    },
+    {
+      "id": "WLn8X0R84FBuR5k4rmGGa",
+      "name": "Event name 1",
+      "city": "City name 3",
+      "address": "Address name 2",
+      "date": {
+        "days": "20",
+        "month": "January",
+        "year": "2021"
+      },
+      "imgSrc": "/wwwdance/assets/UpcomingEventsAssets/2021/January/WLn8X0R84FBuR5k4rmGGa-1743594987626.jpg",
+      "about": "Something about",
+      "pdfUploaded": false
     }
   ]
 }

@@ -2,6 +2,7 @@ import { FC, useMemo } from "react";
 import { Modal } from "../../../shared/Modal";
 import { competitions } from "../../../../data/competitionsData.json";
 import styles from "./styles.module.scss";
+import { EventData } from "@utils/datatype";
 
 interface EventInfoProps {
   isOpen: boolean;
@@ -15,7 +16,7 @@ export const EventInfo: FC<EventInfoProps> = ({
 }) => {
   const event = useMemo(() => {
     return competitions.find((event) => event.imgSrc === selectedEvent);
-  }, [selectedEvent]);
+  }, [selectedEvent]) as EventData | undefined;
 
   return (
     <Modal isOpen={isOpen} onCancelClick={onCancelClick}>
@@ -33,7 +34,10 @@ export const EventInfo: FC<EventInfoProps> = ({
 
           <div className={styles.subTitleWrap}>
             <span className={styles.subtitle}>Date</span>
-            <span>{event?.date}</span>
+            <span>
+              {event?.date?.days.toString()}.{event?.date?.month}
+              {event?.date?.year}
+            </span>
           </div>
 
           <div className={styles.subTitleWrap}>
