@@ -1,0 +1,56 @@
+@use "@styles/module-imports" as *;
+
+.imageUploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .dropArea {
+    width: 100%;
+    height: 100px;
+    border: 2px dashed $pink;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: $purple;
+    }
+
+    &.hasImage {
+      border: none;
+    }
+
+    .preview {
+      width: 100%;
+      height: 100%;
+      max-height: max-content;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      object-fit: contain;
+    }
+  }
+
+  .uploadBtn {
+    background-color: $pink-secondary;
+    color: $white;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: $purple;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+}
