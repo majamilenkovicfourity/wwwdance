@@ -8,9 +8,10 @@ export type EventData = {
   };
   address: string;
   city: string;
-  imgSrc?: string;
+  image?: File | string;
+  document?: File;
   about: string;
-  pdfUploaded: boolean;
+  isPdfUploaded: boolean;
 };
 
 export enum Month {

@@ -68,10 +68,21 @@ table {
 .rowWrapper:hover {
   background-color: $purple;
 }
-.buttonWrapper {
+.buttonWrapper,
+.addEvent {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  button {
+    background-color: $pink-secondary !important;
+    width: 100px;
+    height: 30px;
+    color: white;
+  }
+  button:hover {
+    background-color: $purple !important;
+  }
 }

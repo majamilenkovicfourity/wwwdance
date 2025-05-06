@@ -11,7 +11,7 @@ export const Contact: React.FC = () => {
       <div className={styles.infoHolder}>
         <div className={styles.phone}>
           <div className={styles.fiPhone}>
-            <img src="/wwwdance/assets/fi_phone_orange.svg" alt="phone" />
+            <img src="/assets/fi_phone_orange.svg" alt="phone" />
           </div>
           <div>
             <p> If you want to get in touch with us, contact us via phone: </p>
@@ -28,7 +28,7 @@ export const Contact: React.FC = () => {
           </div>
           <div className={styles.contactButton}>
             <img
-              src="/wwwdance/assets/envelope.png"
+              src="/assets/envelope.png"
               alt="envelope"
               width={10}
               height={10}

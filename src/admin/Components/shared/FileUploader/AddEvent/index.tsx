@@ -2,7 +2,8 @@ import { EventData, Month } from "../../../../../utils/datatype";
 import { Modal } from "../../../../../components/shared/Modal";
 import ImageUploader from "../../ImageUpload";
 import styles from "./styles.module.scss";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import ToasterMessage, { ToasterMessageProps } from "../../ToasterMessage";
 
 type AddEventProps = {
   isOpen: boolean;
@@ -10,6 +11,10 @@ type AddEventProps = {
 };
 
 const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
+  const [toasterMessage, setToasterMessage] = useState<ToasterMessageProps>({
+    message: "",
+    type: "success",
+  });
   const [testData, setTestData] = useState<EventData>({
     about: "",
     date: {
@@ -20,7 +25,7 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
     address: "",
     city: "",
     name: "",
-    pdfUploaded: false,
+    isPdfUploaded: false,
   });
 
   // Removed duplicate handleOnSave declaration
@@ -29,14 +34,13 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     field: string
   ) => {
-    console.log("EVENT: ", event);
     setTestData((prev) => ({
       ...prev,
       [field]: event.target.value,
     }));
   };
   const handleOnChangeNestedInput = (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
     nestedField: keyof EventData["date"]
   ) => {
     setTestData((prev) => ({
@@ -55,8 +59,6 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
   const [file, setFile] = useState<File | null>(null); // To store the image file
 
   const handleOnSave = async () => {
-    console.log("TEST DATA: ", testData);
-
     const formData = new FormData();
     formData.append("name", testData.name);
     formData.append("about", testData.about);
@@ -75,92 +77,113 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
         method: "POST",
         body: formData,
       });
+      const result = await response.json();
+      console.log("File uploaded successfully:", result);
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log("File uploaded successfully:", result);
-      } else {
-        console.error("File upload failed");
+      if (result.error) {
+        setToasterMessage({ message: result.error, type: "error" });
+        return;
       }
+
+      setToasterMessage({
+        message: "Event successfully added!",
+        type: "success",
+      });
     } catch (error) {
       console.error("Error uploading file:", error);
     }
   };
 
   return (
-    <Modal isOpen={isOpen} onCancelClick={onCancelClick}>
-      <div>
-        <div>
-          <div> Name: </div>
-          <div>
-            <input
-              type="text"
-              placeholder="name"
-              value={testData.name}
-              onChange={(event) => handleOnChangeInput(event, "name")}
-            />
+    <>
+      <Modal isOpen={isOpen} onCancelClick={onCancelClick}>
+        <div className={styles.addEventContainer}>
+          <h1> New event </h1>
+          <div className={styles.inputWrapper}>
+            <div className={styles.inputsContainer}>
+              <div>
+                <div>
+                  <p> Name </p>
+                  <input
+                    type="text"
+                    value={testData.name}
+                    onChange={(event) => handleOnChangeInput(event, "name")}
+                  />
+                </div>
+                <div>
+                  <p> Address </p>
+
+                  <input
+                    type="text"
+                    onChange={(event) => handleOnChangeInput(event, "address")}
+                    value={testData.address}
+                  />
+                </div>
+                <div>
+                  <p> City </p>
+
+                  <input
+                    type="text"
+                    value={testData.city}
+                    onChange={(event) => handleOnChangeInput(event, "city")}
+                  />
+                </div>
+              </div>
+
+              <div className={styles.dateContainer}>
+                <p> Date </p>
+                <input
+                  type="text"
+                  value={testData.date.days}
+                  onChange={(event) => handleOnChangeNestedInput(event, "days")}
+                />
+                <p> Month </p>
+
+                <select
+                  value={testData.date.month}
+                  onChange={(event) =>
+                    handleOnChangeNestedInput(event, "month")
+                  }
+                >
+                  {Object.values(Month).map((month) => (
+                    <option key={month} value={month}>
+                      {month}
+                    </option>
+                  ))}
+                </select>
+
+                <p> Year </p>
+
+                <input
+                  type="number"
+                  onChange={(event) => handleOnChangeNestedInput(event, "year")}
+                />
+              </div>
+            </div>
+            <div className={styles.textAreaContainer}>
+              <span> About </span>
+              <textarea
+                value={testData.about}
+                onChange={(event) => handleOnChangeInput(event, "about")}
+              />
+            </div>
+
+            <div className={styles.imageUploadContainer}>
+              <ImageUploader onImageUpload={handleImageUpload} />
+            </div>
+          </div>
+
+          <div className={styles.buttonWrapper}>
+            <button onClick={async () => await handleOnSave()}> Save </button>
+            <button> Cancel </button>
           </div>
         </div>
-        <div>
-          <div> Address: </div>
-          <div>
-            <input
-              type="text"
-              placeholder="address"
-              onChange={(event) => handleOnChangeInput(event, "address")}
-              value={testData.address}
-            />
-          </div>
-        </div>
-        <div>
-          <div> City: </div>
-          <div>
-            <input
-              type="text"
-              value={testData.city}
-              onChange={(event) => handleOnChangeInput(event, "city")}
-            />
-          </div>
-        </div>
-        <div>
-          <div> Date: </div>
-          <div>
-            <input
-              type="text"
-              value={testData.date.days}
-              onChange={(event) => handleOnChangeNestedInput(event, "days")}
-            />
-            <select value={testData.date.month}>
-              {Object.values(Month).map((month) => (
-                <option key={month} value={month}>
-                  {month}
-                </option>
-              ))}
-            </select>
-            <input
-              type="number"
-              onChange={(event) => handleOnChangeNestedInput(event, "year")}
-            />
-          </div>
-        </div>
-        <div>
-          <div> About: </div>
-          <div>
-            <textarea
-              value={testData.about}
-              onChange={(event) => handleOnChangeInput(event, "about")}
-            />
-          </div>
-        </div>
-        <div>
-          <ImageUploader onImageUpload={handleImageUpload} />
-        </div>
-        <div className={styles.buttonWrapper}>
-          <button onClick={handleOnSave}> Save </button>
-          <button> Cancel </button>
-        </div>
-      </div>
-    </Modal>
+      </Modal>
+      <ToasterMessage
+        message={toasterMessage.message}
+        type={toasterMessage.type}
+      />
+    </>
   );
 };
 export default AddEvent;

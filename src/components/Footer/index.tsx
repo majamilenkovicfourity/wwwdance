@@ -52,11 +52,11 @@ export const Footer: React.FC = () => {
       </div>
       <div className={styles.textWrapper}>
         <div className={styles.emailImage}>
-          <img src="/wwwdance/assets/envelope.png" alt="mail" />
+          <img src="/assets/envelope.png" alt="mail" />
         </div>
         <div className={styles.emailText}>
           <div className={styles.envelopeForDesktop}>
-            <img src={"/wwwdance/assets/emailIcon.svg"} alt="Email Icon" />
+            <img src={"/assets/emailIcon.svg"} alt="Email Icon" />
           </div>
           <span>{footerElement.Email}</span>
         </div>

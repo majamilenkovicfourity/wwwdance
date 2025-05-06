@@ -7,7 +7,7 @@ const Slider: FC = () => {
   const sliderContent = useMemo(() => {
     return [
       {
-        src: "/wwwdance/assets/BalletDance.png",
+        src: "/assets/BalletDance.png",
         alt: "danceStyle",
         title: "Ballet",
         text: "Classical ballet is the most traditional and structured form of ballet, characterized by its graceful movements, precise techniques and it requires immense dedication, strength, and flexibility.",
@@ -15,7 +15,7 @@ const Slider: FC = () => {
         color: "pink",
       },
       {
-        src: "/wwwdance/assets/HipHopDance.png",
+        src: "/assets/HipHopDance.png",
         alt: "danceStyle",
         title: "Hip-Hop",
         text: "Hip-hop dance is a vibrant and energetic street dance style that originated in the 1970s in the Bronx, New York City. It has grown into a global phenomenon, influencing everything from music videos to competitive dance battles.",
@@ -23,7 +23,7 @@ const Slider: FC = () => {
         color: "purple",
       },
       {
-        src: "/wwwdance/assets/JazzDance.png",
+        src: "/assets/JazzDance.png",
         alt: "danceStyle",
         title: "Jazz Dance",
         text: "Jazz dance is an energetic and expressive dance style that blends African-American rhythms and movements with elements of ballet, modern dance and gimnastics. It emerged in the early 20th century in the United States and has evolved into various styles.",
@@ -31,7 +31,7 @@ const Slider: FC = () => {
         color: "orange",
       },
       {
-        src: "/wwwdance/assets/BellyDance.png",
+        src: "/assets/BellyDance.png",
         alt: "Belly Dance",
         title: "Belly Dance",
         text: "Belly dance has origins in the ME and NA. It is characterized by hip movements, undulating torso isolations, and arm gestures. It has evolved into various styles and is now practiced worldwide for performance, fitness, and cultural expression.",
@@ -39,7 +39,7 @@ const Slider: FC = () => {
         color: "pink",
       },
       {
-        src: "/wwwdance/assets/BreakDance.png",
+        src: "/assets/BreakDance.png",
         alt: "Break Dance",
         title: "Break Dance",
         text: "Breaking is a dynamic, freestyle dance and includes footwork, power moves, freezes, .... It is often performed in battles, where dancers compete to showcase their skills, creativity, and musicality. It has grown into a global phenomenon, influencing everything from music videos to competitive dance battles.",
@@ -47,7 +47,7 @@ const Slider: FC = () => {
         color: "purple",
       },
       {
-        src: "/wwwdance/assets/ModernDance.png",
+        src: "/assets/ModernDance.png",
         alt: "Modern Dance",
         title: "Modern Dance",
         text: "A highly expressive and freeform dance style that emerged in the early 20th century as a rebellion against the strict rules of classical ballet. It focuses on natural movement, emotions, and individuality, allowing dancers to explore innovative techniques and storytelling methods.",
@@ -98,7 +98,7 @@ const Slider: FC = () => {
         onClick={handlePrev}
         className={cx(styles.arrowButton, styles.left)}
       >
-        <img src="/wwwdance/assets/ArrowLeftWhite.png" alt="arrow left" />
+        <img src="/assets/ArrowLeftWhite.png" alt="arrow left" />
       </button>
 
       <div className={styles.categoryHolder}>
@@ -130,7 +130,7 @@ const Slider: FC = () => {
         onClick={handleNext}
         className={cx(styles.arrowButton, styles.right)}
       >
-        <img src="/wwwdance/assets/ArrowRightWhite.png" alt="arrow right" />
+        <img src="/assets/ArrowRightWhite.png" alt="arrow right" />
       </button>
     </div>
   );
