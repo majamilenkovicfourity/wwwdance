@@ -7,7 +7,7 @@
   flex-direction: column;
 
   @include media(laptops) {
-    background-image: url("/wwwdance/assets/aboutus-wallpaper.png");
+    background-image: url("/assets/aboutus-wallpaper.png");
     background-position: 0% 93%;
     background-size: cover;
     background-repeat: no-repeat;

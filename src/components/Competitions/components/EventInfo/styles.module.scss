@@ -4,6 +4,7 @@
   display: flex;
   flex-flow: column;
 }
+
 .title {
   font-size: 20px;
   margin-top: 20px;
@@ -50,4 +51,19 @@
   margin-bottom: 5px;
   margin-top: 5px;
   align-items: center;
+}
+
+.fileDownload {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  word-break: break-all;
+  margin: 5px;
+  img {
+    width: 30px;
+  }
 }

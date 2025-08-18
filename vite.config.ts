@@ -5,7 +5,7 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/wwwdance",
+  base: "/",
   css: {
     preprocessorOptions: {
       sass: {
@@ -16,6 +16,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@styles": path.resolve(__dirname, "src/styles"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
     },
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
 });

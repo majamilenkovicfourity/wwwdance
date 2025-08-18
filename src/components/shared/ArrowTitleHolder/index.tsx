@@ -9,8 +9,8 @@ const ArrowTitleHolder: FC<ArrowTitleHolderProp> = ({ title }) => {
   return (
     <div className={styles.upcomingEvent}>
       <div className={styles.arrowHolder}>
-        <img src="/wwwdance/assets/ArrowRight.png" alt="arrow" />
-        <img src="/wwwdance/assets/ArrowRight.png" alt="arrow" />
+        <img src="/assets/ArrowRight.png" alt="arrow" />
+        <img src="/assets/ArrowRight.png" alt="arrow" />
       </div>
       <span>
         <p> {title} </p>

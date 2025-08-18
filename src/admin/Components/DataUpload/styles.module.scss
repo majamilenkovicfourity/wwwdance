@@ -1,0 +1,88 @@
+@use "@styles/module-imports" as *;
+
+.buttonUpload {
+  background-color: wheat;
+}
+.dataContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tableWrapper {
+  display: flex;
+
+  width: 100%;
+  justify-content: center;
+
+  @include media(laptops) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+table {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header {
+  background-color: $pink-secondary;
+  height: 30px;
+  flex: auto;
+
+  th {
+    padding: 2px;
+  }
+}
+
+.addEvent {
+  justify-content: flex-end;
+  display: flex;
+  align-self: end;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+// button {
+//   background-color: $pink-secondary !important;
+//   width: 100px;
+//   height: 30px;
+//   color: white;
+// }
+// button:hover {
+//   background-color: $purple !important;
+// }
+
+.selected {
+  background-color: $purple;
+}
+.rowWrapper:hover {
+  background-color: $purple;
+}
+.buttonWrapper,
+.addEvent {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  button {
+    background-color: $pink-secondary !important;
+    width: 100px;
+    height: 30px;
+    color: white;
+  }
+  button:hover {
+    background-color: $purple !important;
+  }
+}

@@ -5,7 +5,7 @@ export const SearchInput: React.FC = () => {
     <div className={styles.searchWrapper}>
       <input type="text" className={styles.searchInput}></input>
       <img
-        src="/wwwdance/assets/fi_search.svg"
+        src="/assets/fi_search.svg"
         alt="seach"
         className={styles.searchIcon}
         width={20}

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useScreenWidth } from "../../hooks/useScreenWidth";
 import styles from "./styles.module.scss";
 import clsx from "clsx";
 import { NavLink, useNavigate } from "react-router-dom";
 import { breakpoints, navItems } from "../../const/global";
+import { useScreenWidth } from "../../hooks/useScreenWidth";
 
 export const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +14,12 @@ export const NavBar: React.FC = () => {
     <div className={styles.navBar}>
       <div className={styles.navItemHolder}>
         <button className={styles.mainLogoWidth} onClick={() => navigate("/")}>
-          <img src="/wwwdance/assets/LogoWWW.svg" alt="logo" />
+          <img src="/assets/LogoWWW.svg" alt="logo" />
         </button>
         {screenWidth <= 960 && (
           <button onClick={() => setIsOpen(!isOpen)}>
             <div className={styles.hamburger}>
-              <img src="/wwwdance/assets/fi_menu.svg" alt="meni" />
+              <img src="/assets/fi_menu.svg" alt="meni" />
             </div>
           </button>
         )}

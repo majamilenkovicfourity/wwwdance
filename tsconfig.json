@@ -1,7 +1,36 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true, // Allows default imports from modules without a default export
+    "esModuleInterop": true, // Ensures compatibility with CommonJS modules
+    "module": "ESNext", // Use ESNext for module resolution
+    "moduleResolution": "Node", // Use Node module resolution, works with ESM in Node.js
+    "outDir": "./dist", // Output directory for compiled JS files
+    "rootDir": ".", // Root directory for TypeScript source files
+    "skipLibCheck": true, // Skips type checking of declaration files (faster builds)
+    "strict": true, // Enables all strict type-checking options
+    "target": "ESNext", // Compile to the latest ECMAScript version
+    "lib": ["ESNext", "DOM"], // Include ESNext and DOM typings (useful for browser environments)
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "isolatedModules": true, // Ensures each file can be safely transpiled independently
+    "noEmit": false, // Prevents emitting files during compilation (set to true if you don't want to emit)
+    "paths": {
+      "@utils/*": ["./src/utils/*"]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "**/*.ts", // Include all TypeScript files
+    "**/*.d.ts", // Include declaration files
+    "src/**/*.ts", // Include all TypeScript files in the `src` folder
+    "server/**/*.ts", // Include all TypeScript files in the `server` folder
+    "src/**/*.tsx", // Include all TypeScript JSX files
+    "**/*.js", // Explicitly include JavaScript files for import
+    "src/**/*.js",
+    "backend/**/*.js"
+  ],
+  "exclude": [
+    "node_modules", // Excludes the `node_modules` folder
+    "dist" // Excludes the output directory
   ]
 }
