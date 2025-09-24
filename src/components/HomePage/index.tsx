@@ -1,30 +1,35 @@
-import React, { useEffect } from "react";
-import styles from "./styles.module.scss";
-import { quote } from "../../const/global";
-import ArrowTitleHolder from "../shared/ArrowTitleHolder";
-import EventByMonth from "../Competitions/components/EventByMonth";
-import Slider from "./Slider";
+import React, { useEffect } from 'react';
+import styles from './styles.module.scss';
+import { quote } from '../../const/global';
+import ArrowTitleHolder from '../shared/ArrowTitleHolder';
+import EventByMonth from '../Competitions/components/EventByMonth';
+import Slider from './Slider';
 
-import { EventData } from "@utils/datatype";
-import { getEvents } from "../../service/Events/eventService";
-import { monthNameToNumber } from "@utils/dateHelpers";
+import { EventData } from '@utils/datatype';
+import { getEvents } from '../../service/Events/eventService';
+import { monthNameToNumber } from '@utils/dateHelpers';
+import { getEventsSubase } from '../../service/supabase/events';
 
 export const HomePage: React.FC = () => {
   const [competitions, setCompetitions] = React.useState<EventData[]>([]);
 
   const fetchEvents = async () => {
-    const events = (await getEvents()).filter((event) => {
-      return (
-        event.date.year > new Date().getFullYear() ||
-        (event.date.year === new Date().getFullYear() &&
-          monthNameToNumber(event.date.month) >= new Date().getMonth())
-      );
-    });
+    // const events = (await getEvents()).filter((event) => {
+    //   return (
+    //     event.date.year > new Date().getFullYear() ||
+    //     (event.date.year === new Date().getFullYear() &&
+    //       monthNameToNumber(event.date.month) >= new Date().getMonth())
+    //   );
+    // });
+
+    const events = await getEventsSubase();
+    console.log('Events: ', events);
 
     setCompetitions(events);
   };
 
   useEffect(() => {
+    console.log('use effect called');
     fetchEvents();
   }, []);
 
@@ -39,13 +44,13 @@ export const HomePage: React.FC = () => {
           playsInline
           className={styles.mainVideo}
         >
-          <source src="/assets/homepagevideo2.mp4" type="video/mp4" />
+          <source src='/assets/homepagevideo2.mp4' type='video/mp4' />
           Your browser does not support the video tag.
         </video>
       </div>
 
       {/* Upcoming events */}
-      <ArrowTitleHolder title="Upcoming events" />
+      <ArrowTitleHolder title='Upcoming events' />
       <EventByMonth events={competitions} />
 
       {/* Quote */}
