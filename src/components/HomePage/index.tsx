@@ -6,8 +6,6 @@ import EventByMonth from '../Competitions/components/EventByMonth';
 import Slider from './Slider';
 
 import { EventData } from '@utils/datatype';
-import { getEvents } from '../../service/Events/eventService';
-import { monthNameToNumber } from '@utils/dateHelpers';
 import { getEventsSubase } from '../../service/supabase/events';
 
 export const HomePage: React.FC = () => {
