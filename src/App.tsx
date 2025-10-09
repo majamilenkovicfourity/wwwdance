@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <link rel='icon' type='image/png' href='/favicon.png' />
-      <Router basename='/wwwdance'>
+      <Router basename='/'>
         <Routes>
           <Route path='/admin/*' element={<AdminApp />} />
           <Route path='/*' element={<ClientApp />} />
