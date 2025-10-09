@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "start": "npx tsc && tsx server/server.ts"
+    "start": "npx tsc"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -21,7 +21,7 @@
     "@fastify/multipart": "^9.0.3",
     "@mui/icons-material": "^7.0.1",
     "@mui/material": "^7.0.1",
-    "@supabase/supabase-js": "^2.57.4",
+    "@supabase/supabase-js": "^2.75.0",
     "clsx": "^2.1.1",
     "fastify": "^5.2.2",
     "fastify-cli": "^7.4.0",
