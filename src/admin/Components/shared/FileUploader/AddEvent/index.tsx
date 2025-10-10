@@ -23,7 +23,7 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
       year: 0,
     },
     address: '',
-    city: '',
+    location: '',
     name: '',
     isPdfUploaded: false,
   });
@@ -63,7 +63,7 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
     formData.append('name', testData.name);
     formData.append('about', testData.about);
     formData.append('address', testData.address);
-    formData.append('city', testData.city);
+    formData.append('city', testData.location);
     formData.append('date', JSON.stringify(testData.date)); // You might need to serialize date if necessary
     formData.append('pdfUploaded', String(false));
 
