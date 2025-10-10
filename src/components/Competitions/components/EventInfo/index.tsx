@@ -23,15 +23,17 @@ export const EventInfo: FC<EventInfoProps> = ({
           <div className={styles.subTitleWrap}>
             <span className={styles.subtitle}>Location</span>
             <span>
-              {selectedEvent?.address} - {selectedEvent?.city}
+              {selectedEvent?.address}
+              {selectedEvent.address && selectedEvent.location ? ' - ' : ''}
+              {selectedEvent?.location}
             </span>
           </div>
 
           <div className={styles.subTitleWrap}>
             <span className={styles.subtitle}>Date</span>
             <span>
-              {selectedEvent?.date?.days.toString()}{' '}
-              {selectedEvent?.date?.month} {selectedEvent?.date?.year}{' '}
+              {selectedEvent?.date?.days.toString()} &nbsp;
+              {selectedEvent?.date?.month} {selectedEvent?.date?.year}
             </span>
           </div>
 

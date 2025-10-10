@@ -4,23 +4,34 @@ import styles from './styles.module.scss';
 import { EventData } from '@utils/datatype';
 import EventByMonth from './components/EventByMonth';
 import { getEventsSubase } from '../../service/supabase/events';
+import { Loader } from '../shared/Loader';
 
 const Competitions: React.FC = () => {
   const [competitions, setCompetitions] = useState<EventData[]>([]);
-
-  const fetchEvents = async () => {
-    const events = await getEventsSubase();
-    setCompetitions(events);
-  };
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchEvents();
+    const fetchData = async () => {
+      const events = await getEventsSubase();
+      if (events) {
+        setCompetitions(events);
+        setIsLoading(false);
+      } else {
+        setCompetitions([]);
+        setIsLoading(true);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
     <div className={styles.competitionsHolder}>
       <ArrowTitleHolder title='Upcoming events' />
-      <EventByMonth isByMonth events={competitions} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <EventByMonth isByMonth events={competitions} />
+      )}
     </div>
   );
 };

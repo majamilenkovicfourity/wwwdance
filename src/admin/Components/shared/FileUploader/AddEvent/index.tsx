@@ -1,9 +1,9 @@
-import { EventData, Month } from "../../../../../utils/datatype";
-import { Modal } from "../../../../../components/shared/Modal";
-import ImageUploader from "../../ImageUpload";
-import styles from "./styles.module.scss";
-import { ChangeEvent, useState } from "react";
-import ToasterMessage, { ToasterMessageProps } from "../../ToasterMessage";
+import { EventData, Month } from '../../../../../utils/datatype';
+import { Modal } from '../../../../../components/shared/Modal';
+import ImageUploader from '../../ImageUpload';
+import styles from './styles.module.scss';
+import { ChangeEvent, useState } from 'react';
+import ToasterMessage, { ToasterMessageProps } from '../../ToasterMessage';
 
 type AddEventProps = {
   isOpen: boolean;
@@ -12,19 +12,19 @@ type AddEventProps = {
 
 const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
   const [toasterMessage, setToasterMessage] = useState<ToasterMessageProps>({
-    message: "",
-    type: "success",
+    message: '',
+    type: 'success',
   });
   const [testData, setTestData] = useState<EventData>({
-    about: "",
+    about: '',
     date: {
-      days: "",
+      days: '',
       month: Month.January,
       year: 0,
     },
-    address: "",
-    city: "",
-    name: "",
+    address: '',
+    city: '',
+    name: '',
     isPdfUploaded: false,
   });
 
@@ -41,7 +41,7 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
   };
   const handleOnChangeNestedInput = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
-    nestedField: keyof EventData["date"]
+    nestedField: keyof EventData['date']
   ) => {
     setTestData((prev) => ({
       ...prev,
@@ -60,37 +60,37 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
 
   const handleOnSave = async () => {
     const formData = new FormData();
-    formData.append("name", testData.name);
-    formData.append("about", testData.about);
-    formData.append("address", testData.address);
-    formData.append("city", testData.city);
-    formData.append("date", JSON.stringify(testData.date)); // You might need to serialize date if necessary
-    formData.append("pdfUploaded", String(false));
+    formData.append('name', testData.name);
+    formData.append('about', testData.about);
+    formData.append('address', testData.address);
+    formData.append('city', testData.city);
+    formData.append('date', JSON.stringify(testData.date)); // You might need to serialize date if necessary
+    formData.append('pdfUploaded', String(false));
 
     if (file) {
-      formData.append("image", file); // Append the image file
+      formData.append('image', file); // Append the image file
     }
 
     // Make the API call to upload the data
     try {
-      const response = await fetch("http://127.0.0.1:3000/addEvent", {
-        method: "POST",
+      const response = await fetch('http://127.0.0.1:3000/addEvent', {
+        method: 'POST',
         body: formData,
       });
       const result = await response.json();
-      console.log("File uploaded successfully:", result);
+      console.log('File uploaded successfully:', result);
 
       if (result.error) {
-        setToasterMessage({ message: result.error, type: "error" });
+        setToasterMessage({ message: result.error, type: 'error' });
         return;
       }
 
       setToasterMessage({
-        message: "Event successfully added!",
-        type: "success",
+        message: 'Event successfully added!',
+        type: 'success',
       });
     } catch (error) {
-      console.error("Error uploading file:", error);
+      console.error('Error uploading file:', error);
     }
   };
 
@@ -105,17 +105,17 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
                 <div>
                   <p> Name </p>
                   <input
-                    type="text"
+                    type='text'
                     value={testData.name}
-                    onChange={(event) => handleOnChangeInput(event, "name")}
+                    onChange={(event) => handleOnChangeInput(event, 'name')}
                   />
                 </div>
                 <div>
                   <p> Address </p>
 
                   <input
-                    type="text"
-                    onChange={(event) => handleOnChangeInput(event, "address")}
+                    type='text'
+                    onChange={(event) => handleOnChangeInput(event, 'address')}
                     value={testData.address}
                   />
                 </div>
@@ -123,9 +123,9 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
                   <p> City </p>
 
                   <input
-                    type="text"
-                    value={testData.city}
-                    onChange={(event) => handleOnChangeInput(event, "city")}
+                    type='text'
+                    value={testData.location}
+                    onChange={(event) => handleOnChangeInput(event, 'city')}
                   />
                 </div>
               </div>
@@ -133,16 +133,16 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
               <div className={styles.dateContainer}>
                 <p> Date </p>
                 <input
-                  type="text"
+                  type='text'
                   value={testData.date.days}
-                  onChange={(event) => handleOnChangeNestedInput(event, "days")}
+                  onChange={(event) => handleOnChangeNestedInput(event, 'days')}
                 />
                 <p> Month </p>
 
                 <select
                   value={testData.date.month}
                   onChange={(event) =>
-                    handleOnChangeNestedInput(event, "month")
+                    handleOnChangeNestedInput(event, 'month')
                   }
                 >
                   {Object.values(Month).map((month) => (
@@ -155,8 +155,8 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
                 <p> Year </p>
 
                 <input
-                  type="number"
-                  onChange={(event) => handleOnChangeNestedInput(event, "year")}
+                  type='number'
+                  onChange={(event) => handleOnChangeNestedInput(event, 'year')}
                 />
               </div>
             </div>
@@ -164,7 +164,7 @@ const AddEvent: React.FC<AddEventProps> = ({ isOpen, onCancelClick }) => {
               <span> About </span>
               <textarea
                 value={testData.about}
-                onChange={(event) => handleOnChangeInput(event, "about")}
+                onChange={(event) => handleOnChangeInput(event, 'about')}
               />
             </div>
 

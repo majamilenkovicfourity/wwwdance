@@ -1,0 +1,23 @@
+@use "@styles/module-imports" as *;
+
+.spinnerWrapper {
+    margin: 30px 0px;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid $pink_secondary;
+    border-top-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    display: inline-block;
+    transition-duration: 1500ms;
+    transition-timing-function: ease;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

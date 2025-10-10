@@ -7,7 +7,7 @@ export type EventData = {
     year: number;
   };
   address: string;
-  city: string;
+  location: string;
   image?: File | string;
   document?: File;
   about: string;
@@ -15,16 +15,16 @@ export type EventData = {
 };
 
 export enum Month {
-  January = "January",
-  February = "February",
-  March = "March",
-  April = "April",
-  May = "May",
-  June = "June",
-  July = "July",
-  August = "August",
-  September = "September",
-  October = "October",
-  November = "November",
-  December = "December",
+  January = 'January',
+  February = 'February',
+  March = 'March',
+  April = 'April',
+  May = 'May',
+  June = 'June',
+  July = 'July',
+  August = 'August',
+  September = 'September',
+  October = 'October',
+  November = 'November',
+  December = 'December',
 }

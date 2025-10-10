@@ -1,6 +1,7 @@
 @use "@styles/module-imports" as *;
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap");
+
 .flex {
   display: flex;
   align-items: center;
@@ -12,6 +13,7 @@
   flex-direction: column;
   flex: 1;
 }
+
 .mainPhoto {
   margin: 50px 0px;
   z-index: -20;
@@ -20,6 +22,7 @@
   height: 400px;
 
   position: relative;
+
   @include media(tablets) {
     margin-bottom: 50px;
     margin-top: 0px;
@@ -52,17 +55,19 @@ video::-webkit-media-controls {
   align-items: center;
   gap: 10px;
 }
+
 .arrowHolder {
   display: flex;
   flex-direction: row;
 }
+
 .quoteWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: $pink;
-  padding: 40px 0px;
+  padding: 3cqh 0px;
   text-align: center;
   font-style: italic;
   width: 100%;

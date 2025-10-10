@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { quote } from '../../const/global';
 import ArrowTitleHolder from '../shared/ArrowTitleHolder';
@@ -7,28 +7,25 @@ import Slider from './Slider';
 
 import { EventData } from '@utils/datatype';
 import { getEventsSubase } from '../../service/supabase/events';
+import { Loader } from '../shared/Loader';
+import { getNext3Events } from '@utils/dateHelpers';
 
-export const HomePage: React.FC = () => {
-  const [competitions, setCompetitions] = React.useState<EventData[]>([]);
-
-  const fetchEvents = async () => {
-    // const events = (await getEvents()).filter((event) => {
-    //   return (
-    //     event.date.year > new Date().getFullYear() ||
-    //     (event.date.year === new Date().getFullYear() &&
-    //       monthNameToNumber(event.date.month) >= new Date().getMonth())
-    //   );
-    // });
-
-    const events = await getEventsSubase();
-    console.log('Events: ', events);
-
-    setCompetitions(events);
-  };
+export const HomePage: FC = () => {
+  const [competitions, setCompetitions] = useState<EventData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('use effect called');
-    fetchEvents();
+    const fetchData = async () => {
+      const events = await getEventsSubase();
+      if (events) {
+        setCompetitions(getNext3Events(events));
+        setIsLoading(false);
+      } else {
+        setCompetitions([]);
+        setIsLoading(true);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
@@ -49,8 +46,8 @@ export const HomePage: React.FC = () => {
 
       {/* Upcoming events */}
       <ArrowTitleHolder title='Upcoming events' />
-      <EventByMonth events={competitions} />
 
+      {isLoading ? <Loader /> : <EventByMonth events={competitions} />}
       {/* Quote */}
       <div className={styles.quoteWrapper}>
         <div className={styles.quote}>"{quote.q1}" </div>

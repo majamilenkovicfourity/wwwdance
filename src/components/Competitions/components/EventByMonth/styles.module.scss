@@ -15,6 +15,7 @@
   letter-spacing: 5px;
   text-transform: uppercase;
 }
+
 .noEvents {
   font-size: 18px;
   margin: 20px 0px;
@@ -43,6 +44,7 @@
   align-items: center;
   overflow: hidden;
   transition: all 0.3s ease;
+
   @include media(e-readers) {
     width: 350px;
     height: auto;
@@ -68,21 +70,26 @@
 
 .overlay {
   cursor: pointer;
-  position: absolute; /* Position the overlay on top of the image */
+  position: absolute;
+  /* Position the overlay on top of the image */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background with opacity */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Dark background with opacity */
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Start with overlay hidden */
-  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  opacity: 0;
+  /* Start with overlay hidden */
+  transition: opacity 0.3s ease;
+  /* Smooth opacity transition */
 }
 
 .eventImg:hover .overlay {
-  opacity: 1; /* Show overlay on hover */
+  opacity: 1;
+  /* Show overlay on hover */
 }
 
 .readMore {

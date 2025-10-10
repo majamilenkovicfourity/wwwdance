@@ -1,11 +1,13 @@
+import { EventData } from '@utils/datatype';
 import { supabase } from './client';
+import { sortEvents } from '@utils/dateHelpers';
 
 export async function getEventsSubase() {
   const { data, error } = await supabase.from('events').select('*');
-  console.log('DATA: ', data);
   if (error) {
     console.error('Error fetching events:', error);
     return [];
   }
-  return data;
+
+  return sortEvents(data) as EventData[];
 }
