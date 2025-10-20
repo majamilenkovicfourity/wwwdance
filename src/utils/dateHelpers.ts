@@ -1,21 +1,21 @@
 import { EventData } from './datatype';
 
-export const monthNameToNumber = (monthName: string): number => {
-  const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
+export const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 
+export const monthNameToNumber = (monthName: string): number => {
   return monthNames.indexOf(monthName);
 };
 

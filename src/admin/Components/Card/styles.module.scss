@@ -1,0 +1,78 @@
+@use "@styles/module-imports" as *;
+
+.cardHolder {
+    width: 350px;
+    // height: 450px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    overflow: auto;
+    border: 3px solid transparent;
+    padding: 6px;
+    // position: relative;
+    cursor: pointer;
+
+}
+
+.cardHolder:hover {
+    border: 3px solid $purple;
+}
+
+.selected {
+    border: 3px solid $purple;
+}
+
+.text1 {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    // align-items: center;
+}
+
+.eventInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.imageWrap {
+    width: 160px;
+    height: auto;
+
+}
+
+.subTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: $pink;
+
+}
+
+.aboutWrap {
+    height: 100px;
+    overflow: auto;
+    padding: 10px;
+    // background-color: red;
+}
+
+.editButton {
+    margin: 0 auto;
+    // display: block;
+    height: 35px;
+    // bottom: 0;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+
+
+    button {
+        background-color: $pink;
+        padding: 10px 0;
+        width: 200px;
+    }
+
+    button:hover {
+        background-color: $purple;
+    }
+}

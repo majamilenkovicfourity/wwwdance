@@ -1,0 +1,65 @@
+@use "@styles/module-imports" as *;
+
+
+.cardWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 26px;
+    margin: 10px 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.filterHolder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.button {
+    background-color: $pink;
+    color: white;
+    padding: 4px 10px;
+    text-align: center;
+    width: 140px;
+
+}
+
+.input {
+    // background-color: red;
+
+    input {
+        height: 100%;
+        background-color: transparent;
+        color: white;
+        border: 1px solid transparent;
+        border-bottom: 1px solid $pink;
+    }
+
+    input:hover {
+        border-bottom: 1px solid $purple;
+    }
+
+    input:focus,
+    :active {
+        border: 1px solid $purple;
+    }
+}
+
+.button:hover {
+    background-color: $purple;
+}
