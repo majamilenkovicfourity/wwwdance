@@ -1,17 +1,18 @@
 import { EventData } from '@utils/datatype';
-import { ChangeEvent, FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { getEventsSubase } from '../../../service/supabase/events';
 import styles from './styles.module.scss';
 import { Card } from '../Card';
 import { Loader } from '../../../components/shared/Loader';
 import { AddEdit } from '../AddEdit';
+import { initData } from '@utils/dataInit';
 
 export const EventView: FC = () => {
   const [competitions, setCompetitions] = useState<EventData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedCardId, setSelectedCardId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
-  const [selectedEvent, setSelectedEvent] = useState<EventData>({});
+  const [selectedEvent, setSelectedEvent] = useState<EventData>(initData);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isEdit, setIsEdit] = useState(false);

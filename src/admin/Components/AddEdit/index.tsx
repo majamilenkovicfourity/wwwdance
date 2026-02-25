@@ -69,13 +69,13 @@ export const AddEdit: FC<AddEditProps> = ({
       if (error) {
         console.error('Update error:', error.message);
       } else {
-        const updatedEvent = data[0] as EventData;
-
-        setCompetitions((prev: EventData[]) =>
-          prev.map((comp: EventData) =>
-            comp.id === updatedEvent.id ? { ...comp, ...updatedEvent } : comp
-          )
-        );
+        console.log('DATA: ', data);
+        // const updatedEvent = data[0] as EventData;
+        // setCompetitions((prev: EventData[]) =>
+        //   prev.map((comp: EventData) =>
+        //     comp.id === updatedEvent.id ? { ...comp, ...updatedEvent } : comp
+        //   )
+        // );
       }
     } catch (err) {
       console.error(err);

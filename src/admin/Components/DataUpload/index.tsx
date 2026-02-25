@@ -8,6 +8,7 @@ import clsx from 'clsx';
 const DataUpload: React.FC = () => {
   const [competitions, setCompetitions] = useState<EventData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  console.log('IS LOADING: ', isLoading);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +39,7 @@ const DataUpload: React.FC = () => {
   };
 
   const [selectedEvent, setSelectedEvent] = useState<EventData>(testData);
-  const [isEdit, setIsEdit] = useState<boolean>(false);
+  // const [isEdit, setIsEdit] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState(false);
   // console.log("Competitions: ", competitions);
 
@@ -58,23 +59,13 @@ const DataUpload: React.FC = () => {
     setIsOpen(true);
   };
 
-  const handlePing = async () => {
-    try {
-      const res = await fetch('http://127.0.0.1:3000/ping');
-      const data = await res.json();
-      setResponse(data.message); // This will be 'Pong'
-    } catch (error) {
-      console.error('Error pinging server:', error);
-    }
-  };
+  // const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
-  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
-
-  const handleFileAccepted = (files: File[]) => {
-    // setUploadedFiles(files);
-    handlePing();
-    console.log('Accepted files:', files);
-  };
+  // const handleFileAccepted = (files: File[]) => {
+  //   // setUploadedFiles(files);
+  //   // handlePing();
+  //   console.log('Accepted files:', files);
+  // };
 
   return (
     <>
